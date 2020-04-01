@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1329" started-at="2020-03-27T12:00:53 IST" finished-at="2020-03-27T12:00:55 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1329" started-at="2020-03-27T12:00:53 IST" finished-at="2020-03-27T12:00:55 IST">
+      <class name="try1.Trials">
+        <test-method status="PASS" signature="uploadExcelAssertEachField()[pri:0, instance:try1.Trials@57e1b0c]" name="uploadExcelAssertEachField" duration-ms="1269" started-at="2020-03-27T12:00:54 IST" finished-at="2020-03-27T12:00:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- uploadExcelAssertEachField -->
+      </class> <!-- try1.Trials -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
