@@ -1,7 +1,6 @@
 package pageObjects;
 
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,72 +25,80 @@ public class ForwardCreateShipmentPage
 	@FindBy(xpath="//select[@ng-model='order.shipment.rto_address_id']")
 	 public WebElement selectRtoaddress_dropdown;
 	
-	//@FindBy(xpath="//label[contains(.,'Customer Ref.')]")
-	@FindBy(xpath="(//label[@id='customer_ref'])[1]]")
-	public
-	WebElement customerref;
+	@FindBy(xpath="//span[@class='left new badge']")
+	public List<WebElement> customerref_tag;
 	
-	@FindBy(xpath="(//label[contains(.,'Customer Ref.')])[1]")
+	@FindBy(xpath="//input[@id='customer_ref']")
+	public List<WebElement> customerref;
+	
+	@FindBy(xpath="(//input[@id='customer_ref'])[1]")
 	public WebElement customerref_rw_1;
+	
 	
 	//for selecting particular row use list
 	@FindBy(xpath="//span[@data-badge-caption='Forward Shipment']")
 	public List<WebElement> rowwithforwardtag;
 	
 	@FindBy(xpath="//select[@ng-change='updateShipmentType(order)']")
-	public WebElement shipmenttype;
+	public List<WebElement> shipmenttype;
 	
 	@FindBy(xpath="(//select[@ng-change='updateShipmentType(order)'])[1]")
 	public WebElement shipmenttype_rw_1;
 	
 	@FindBy(xpath="//select[@ng-model='order.shipment.courier_purpose']")
-	public WebElement courierpurpose;
+	public List<WebElement> courierpurpose;
 	
 	@FindBy(xpath="(//select[@ng-model='order.shipment.courier_purpose'])[1]")
 	public WebElement courierpurpose_rw_1;
 	
 	@FindBy(xpath="//select[@ng-options='x for x in payment_type']")
-	public WebElement paymenttype;
+	public List<WebElement> paymenttype;
 	
 	@FindBy(xpath="(//select[@ng-options='x for x in payment_type'])[1]")
 	public WebElement paymenttype_rw_1;
 	
 	@FindBy(xpath="//input[@name='cod_amount']")
-	public WebElement cod;
+	public List<WebElement> cod;
 	
 	@FindBy(xpath="(//input[@name='cod_amount'])[1]")
 	public WebElement cod_rw_1;
 	
 	@FindBy(xpath="//select[@id='cod_currency']")
-	public WebElement codcurrency;
+	public List<WebElement> codcurrency;
 	
 	@FindBy(xpath="(//select[@id='cod_currency'])[1]")
 	public WebElement codcurrency_rw_1;
 	
 	@FindBy(id="parcel_details")
-	public WebElement parceldescription;
+	public List<WebElement> parceldescription;
 	
 	@FindBy(xpath="(//input[@id='parcel_details'])[1]")
 	public WebElement parceldescription_rw_1;
 	
 	@FindBy(name="value")
-	public WebElement value;
+	public List<WebElement> value;
 	
 	@FindBy(xpath="(//input[@name='value'])[1]")
 	public WebElement value_rw_1;
 	
 	
 	@FindBy(xpath="//select[@ng-model='order.shipment.shipment_value.currency']")
-	public WebElement valuecurrency;
+	public List<WebElement> valuecurrency;
 	
 	@FindBy(xpath="(//select[@ng-model='order.shipment.shipment_value.currency'])[1]")
 	public WebElement valuecurrency_rw_1;
 	
 	@FindBy(name="invoice_number")
-	public WebElement invoiceno;
+	public List<WebElement> invoiceno;
 	
 	@FindBy(xpath="(//input[@name='invoice_number'])[1]")
-	public WebElement invoiceno_rw_;
+	public List<WebElement> invoiceno_rw_;
+	
+	@FindBy(name="waybill_number")
+	public List<WebElement> waybillno;
+	
+	@FindBy(name="ewaybill_number")
+	public List<WebElement> e_waybillno;
 	
 	@FindBy(xpath="//select[@ng-model='package.description']")
 	public WebElement selectboxname;
@@ -100,31 +107,31 @@ public class ForwardCreateShipmentPage
 	public WebElement selectboxname_rw_1;
 	
 	@FindBy(name="weight")
-	public WebElement weight;
+	public List<WebElement> weight;
 	
 	@FindBy(xpath="(//input[@name='weight'])[1]")
 	public WebElement weight_rw_1;
 	
 	@FindBy(name="length")
-	public WebElement length;
+	public List<WebElement> length;
 	
 	@FindBy(xpath="(//input[@name='length'])[1]")
 	public WebElement length_rw_1;
 	
 	@FindBy(name="width")
-	public WebElement width;
+	public List<WebElement> width;
 	
 	@FindBy(xpath="(//input[@name='width'])[1]")
 	public WebElement width_rw_1;
 	
 	@FindBy(name="height")
-	public WebElement height;
+	public List<WebElement> height;
 	
 	@FindBy(xpath="(//input[@name='height'])[1]")
 	public WebElement height_rw_1;
 	
 	@FindBy(name="quantity")
-	public WebElement numberofbox;
+	public List<WebElement> numberofbox;
 	
 	@FindBy(xpath="(//input[@name='quantity'])[1]")
 	public WebElement numberofbox_rw_1;
@@ -143,7 +150,7 @@ public class ForwardCreateShipmentPage
 	
 	//-----Sender Details------
 	@FindBy(id="sender_name")
-	public WebElement sendername;
+	public List<WebElement> sendername;
 	
 	@FindBy(xpath="(//input[@id='sender_name'])[1]")
 	public WebElement sendername_rw_1;
@@ -158,17 +165,16 @@ public class ForwardCreateShipmentPage
 	public WebElement sendername_rw_4;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.ship_from.company_name']")
-	public WebElement sendercompany;
+	public List<WebElement> sendercompany;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.ship_from.company_name'])[1]")
-	public
-	WebElement sendercompany_rw_1;
+	public WebElement sendercompany_rw_1;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.ship_from.company_name'])[2]")
 	public WebElement sendercompany_rw_2;
 	
 	@FindBy(name="sender_street1")
-	public WebElement sen_address1;
+	public List<WebElement> sen_address1;
 	
 	@FindBy(xpath="(//input[@name='sender_street1'])[1]")
 	public WebElement sen_address1_rw_1;
@@ -201,7 +207,7 @@ public class ForwardCreateShipmentPage
 	public WebElement sen_address1_rw_10;
 	
 	@FindBy(name="sender_street2")
-	public WebElement sen_address2;
+	public List<WebElement> sen_address2;
 	
 	@FindBy(xpath="(//input[@name='sender_street2'])[1]")
 	public WebElement sen_address2_rw_1;
@@ -210,7 +216,7 @@ public class ForwardCreateShipmentPage
 	public WebElement sen_address2_rw_2;
 	
 	@FindBy(name="sender_street3")
-	public WebElement sen_address3;
+	public List<WebElement> sen_address3;
 	
 	@FindBy(xpath="(//input[@name='sender_street3'])[1]")
 	public WebElement sen_address3_rw_1;
@@ -219,7 +225,7 @@ public class ForwardCreateShipmentPage
 	public WebElement sen_address3_rw_2;
 	
 	@FindBy(name="sender_city")
-	public WebElement sen_city;
+	public List<WebElement> sen_city;
 	
 	@FindBy(xpath="(//input[@name='sender_city'])[1]")
 	public WebElement sen_city_rw_1;
@@ -228,7 +234,7 @@ public class ForwardCreateShipmentPage
 	public WebElement sen_city_rw_2;
 	
 	@FindBy(xpath="//select[@ng-model='order.shipment.sender_country']")
-	public WebElement sen_country;
+	public List<WebElement> sen_country;
 	
 	@FindBy(xpath="(//select[@ng-model='order.shipment.sender_country'])[1]")
 	public WebElement sen_country_rw_1;
@@ -237,7 +243,7 @@ public class ForwardCreateShipmentPage
 	public WebElement sen_country_rw_2;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.ship_from.state']")
-	public WebElement sen_state;
+	public List<WebElement> sen_state;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.ship_from.state'])[1]")
 	public WebElement sen_state_rw_1;
@@ -246,189 +252,189 @@ public class ForwardCreateShipmentPage
 	public WebElement sen_state_rw_2;
 	
 	@FindBy(name="sender_pincode")
-	public WebElement sen_pincode;
+	public List<WebElement> sen_pincode;
 	
 	@FindBy(xpath="(//input[@name='sender_pincode'])[1]")
 	public WebElement sen_pincode_rw_1;
 	
 	@FindBy(name="sender_phone")
-	public WebElement sen_phone;
+	public List<WebElement> sen_phone;
 	
 	@FindBy(xpath="(//input[@name='sender_phone'])[1]")
 	public WebElement sen_phone_rw_1;
 	
 	@FindBy(name="sender_email")
-	public WebElement sen_email;
+	public List<WebElement> sen_email;
 	
 	@FindBy(xpath="(//input[@name='sender_email'])[1]")
 	public WebElement sen_email_rw_1;
 	
 	@FindBy(xpath="//select[@ng-model='order.shipment.sender_type']")
-	public WebElement sen_addresstype;
+	public List<WebElement> sen_addresstype;
 	
 	@FindBy(xpath="(//select[@ng-model='order.shipment.sender_type'])[1]")
 	public WebElement sen_addresstype_rw_1;
 	
 	@FindBy(id="sender_tax_id")
-	public WebElement sen_taxid;
+	public List<WebElement> sen_taxid;
 	
 	@FindBy(xpath="(//input[@id='sender_tax_id'])[1]")
 	public WebElement sen_taxid_rw_1;
 	
 	//--------Receiver Details----------
 	@FindBy(name="receiver_name")
-	public WebElement rec_name;
+	public List<WebElement> rec_name;
 	
 	@FindBy(xpath="(//input[@name='receiver_name'])[1]")
 	public WebElement rec_name_rw_1;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.ship_to.company_name']")
-	public WebElement rec_companyname;
+	public List<WebElement> rec_companyname;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.ship_to.company_name'])[1]")
 	public WebElement rec_companyname_rw_1;
 	
 	@FindBy(name="receiver_street1")
-	public WebElement rec_address1;
+	public List<WebElement> rec_address1;
 	
 	@FindBy(xpath="(//input[@name='receiver_street1'])[1]")
 	public WebElement rec_address1_rw_1;
 	
 	@FindBy(name="receiver_street2")
-	public WebElement rec_address2;
+	public List<WebElement> rec_address2;
 	
 	@FindBy(xpath="(//input[@name='receiver_street2'])[1]")
 	public WebElement rec_address2_rw_1;
 	
 	@FindBy(name="receiver_street3")
-	public WebElement rec_address3;
+	public List<WebElement> rec_address3;
 	
 	@FindBy(xpath="(//input[@name='receiver_street3'])[1]")
 	public WebElement rec_address3_rw_1;
 	
 	@FindBy(name="receiver_city")
-	public WebElement rec_city;
+	public List<WebElement> rec_city;
 	
 	@FindBy(xpath="(//input[@name='receiver_city'])[1]")
 	public WebElement rec_city_rw_1;
 	
 	@FindBy(xpath="//select[@ng-model='order.shipment.country']")
-	public WebElement rec_country;
+	public List<WebElement> rec_country;
 	
 	@FindBy(xpath="(//select[@ng-model='order.shipment.country'])[1]")
 	public WebElement rec_country_rw_1;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.ship_to.state']")
-	public WebElement rec_state;
+	public List<WebElement> rec_state;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.ship_to.state'])[1]")
 	public WebElement rec_state_rw_1;
 	
 	@FindBy(name="receiver_pincode")
-	public WebElement rec_pincode;
+	public List<WebElement> rec_pincode;
 	
 	@FindBy(xpath="(//input[@name='receiver_pincode'])[1]")
 	public WebElement rec_pincode_rw_1;
 	
 	@FindBy(name="receiver_phone")
-	public WebElement rec_phone;
+	public List<WebElement> rec_phone;
 	
 	@FindBy(xpath="(//input[@name='receiver_phone'])[1]")
 	public WebElement rec_phone_rw_1;
 	
 	@FindBy(name="receiver_email")
-	public WebElement rec_email;
+	public List<WebElement> rec_email;
 	
 	@FindBy(xpath="(//input[@name='receiver_email'])[1]")
 	public WebElement rec_email_rw_1;
 	
 	@FindBy(xpath="//select[@ng-model='order.shipment.type']")
-	public WebElement rec_addresstype;
+	public List<WebElement> rec_addresstype;
 	
 	@FindBy(xpath="(//select[@ng-model='order.shipment.type'])[1]")
 	public WebElement rec_addresstype_rw_1;
 	
 	@FindBy(id="receiver_tax_id")
-	public WebElement rec_taxid;
+	public List<WebElement> rec_taxid;
 	
 	@FindBy(xpath="(//input[@id='receiver_tax_id'])[1]")
 	public WebElement rec_taxid_rw_1;
 	
 	//---------RTO Details--------
 	@FindBy(xpath="//input[@ng-model='order.shipment.return_to.contact_name']")
-	public WebElement rto_name;
+	public List<WebElement> rto_name;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.return_to.contact_name'])[1]")
 	public WebElement rto_name_rw_1;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.return_to.company_name']")
-	public WebElement rto_company;
+	public List<WebElement> rto_company;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.return_to.company_name'])[1]")
 	public WebElement rto_company_rw_1;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.return_to.street1']")
-	public WebElement rto_address1;
+	public List<WebElement> rto_address1;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.return_to.street1'])[1]")
 	public WebElement rto_address1_rw_1;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.return_to.street2']")
-	public WebElement rto_address2;
+	public List<WebElement> rto_address2;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.return_to.street2'])[1]")
 	public WebElement rto_address2_rw_1;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.return_to.street3']")
-	public WebElement rto_address3;
+	public List<WebElement> rto_address3;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.return_to.street3'])[1]")
 	public WebElement rto_address3_rw_1;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.return_to.city']")
-	public WebElement rto_city;
+	public List<WebElement> rto_city;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.return_to.city'])[1]")
 	public WebElement rto_city_rw_1;
 	
 	@FindBy(xpath="//select[@ng-model='order.shipment.return_to_country']")
-	public WebElement rto_country;
+	public List<WebElement> rto_country;
 	
 	@FindBy(xpath="(//select[@ng-model='order.shipment.return_to_country'])[1]")
 	public WebElement rto_country_rw_1;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.return_to.state']")
-	public WebElement rto_state;
+	public List<WebElement> rto_state;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.return_to.state'])[1]")
 	public WebElement rto_state_rw_1;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.return_to.postal_code']")
-	public WebElement rto_pincode;
+	public List<WebElement> rto_pincode;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.return_to.postal_code'])[1]")
 	public WebElement rto_pincode_rw_1;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.return_to.phone']")
-	public WebElement rto_phone;
+	public List<WebElement> rto_phone;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.return_to.phone'])[1]")
 	public WebElement rto_phone_rw_1;
 	
 	@FindBy(xpath="//input[@ng-model='order.shipment.return_to.email']")
-	public WebElement rto_email;
+	public List<WebElement> rto_email;
 	
 	@FindBy(xpath="(//input[@ng-model='order.shipment.return_to.email'])[1]")
 	public WebElement rto_email_rw_1;
 	
 	@FindBy(xpath="//select[@ng-model='order.shipment.return_to.type']")
-	public WebElement rto_addresstype;
+	public List<WebElement> rto_addresstype;
 	
 	@FindBy(xpath="(//select[@ng-model='order.shipment.return_to.type'])[1]")
 	public WebElement rto_addresstype_rw_1;
 	
 	@FindBy(name="return_to_tax_id")
-	public WebElement rto_taxid;
+	public List<WebElement> rto_taxid;
 	
 	@FindBy(xpath="(//input[@name='return_to_tax_id'])[1]")
 	public WebElement rto_taxid_rw_1;
@@ -444,9 +450,20 @@ public class ForwardCreateShipmentPage
 	
 	@FindBy(xpath="//span[@data-badge-caption='Download Label']")
 	public WebElement download_label;
+	
 	//use get text method capture and store and compare against shipments page
 	@FindBy(xpath="//p[contains(@class,'col order_id')]")
 	public WebElement ez_number;
+	
+	@FindBy(xpath="(//p[contains(@class,'col order_id')])[1]")
+	public WebElement ez_number_1;
+	
+	//Error message
+	@FindBy(xpath="//b[@class='ng-binding']")
+	public WebElement error_msg;
+	
+	@FindBy(xpath="(//b[@class='ng-binding'])[1]")
+	public WebElement error_msg_1;
 	
 	@FindBy(xpath="//a[.='Shipper Accounts']")
 	public WebElement shipperaccount_link;
@@ -494,6 +511,21 @@ public class ForwardCreateShipmentPage
 		rto.selectByVisibleText(rto_warehouse);
 	}
 	
+	public void fetchServiceForward()
+	{
+		boolean ser = select_service.isDisplayed();
+		if(ser==true)
+		{
+			Select obj1= new Select(select_service);
+			obj1.selectByVisibleText("Domestic");
+			boolean book = book_generate_label.isEnabled();
+			if(book==true)
+			{
+				book_generate_label.click();
+			}
+			
+		}     
+	}
 
 	
 }

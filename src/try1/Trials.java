@@ -2,31 +2,22 @@ package try1;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Header;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-//import org.apache.poi.sl.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import com.paulhammant.ngwebdriver.ByAngular;
-import com.paulhammant.ngwebdriver.NgWebDriver;
-
 import pageObjects.ExcelUploadPage;
 import pageObjects.ForwardCreateShipmentPage;
 import pageObjects.HomePage;
@@ -37,7 +28,7 @@ public class Trials {
 	@Test(enabled=false)
 	public void log_in()
 	{
-		//adding nothing remov this after pushing	
+		//adding nothing remove this after pushing	
 		String path = "C:\\Users\\Windows\\Downloads\\geckodriver-v0.26.0-win64\\geckodriver.exe";
 		System.setProperty("webdriver.gecko.driver", path);
 		FirefoxDriver driver = new FirefoxDriver();
@@ -50,16 +41,17 @@ public class Trials {
 		WebDriverWait wait1 = new WebDriverWait(driver, 10);
 		WebElement element1 = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[.='add']")));
 		element1.click();
-		ForwardCreateShipmentPage forwd = new ForwardCreateShipmentPage(driver);
-		WebElement name = forwd.sendername.get(1);
-		String sen_name = name.getText();
-		System.out.println("senderrrrr nameeee----->"+sen_name);
+		//		ForwardCreateShipmentPage forwd = new ForwardCreateShipmentPage(driver);
+		//		WebElement name = forwd.sendername.get(1);
+		//		String sen_name = name.getText();
+		//		System.out.println("senderrrrr nameeee----->"+sen_name);
 	}
+
 	@Test
 	//TEST CASE 1
 	public void uploadExcelAssertEachField() throws EncryptedDocumentException, IOException, InterruptedException
 	{
-		String path = "C:\\Users\\Windows\\Downloads\\geckodriver-v0.26.0-win64\\geckodriver.exe";
+		/*		String path = "C:\\Users\\Windows\\Downloads\\geckodriver-v0.26.0-win64\\geckodriver.exe";
 		System.setProperty("webdriver.gecko.driver", path);
 		FirefoxDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
@@ -78,13 +70,13 @@ public class Trials {
 		excel_upload.selectUpload(excel_file_path);
 		//Fetching all fields data from create-shipment page
 		ForwardCreateShipmentPage forward = new ForwardCreateShipmentPage(driver);
-		/*		int no_of_rows = forward.rowwithforwardtag.size();
+				int no_of_rows = forward.rowwithforwardtag.size();
 		System.out.println("total orders: "+no_of_rows);
-			List<String> l1= new ArrayList<String>();
-			 String add1 = forward.customerref_rw_1.getAttribute("value");
-	//		 String add2 = forward.customerref.getAttribute("value");
-		//	 System.out.println("customer reference: "+add2);
-			 l1.add(add1);
+			//List<String> l1= new ArrayList<String>();
+			// String add1 = forward.customerref_rw_1.getAttribute("value");
+			 String add2 = forward.customerref_rw_1.getAttribute("value");
+			 System.out.println("customer reference: "+add2);                                                         */
+		/* l1.add(add1);
 
 			 String add2 = forward.invoiceno.getAttribute("value");
 			 l1.add(add2);
@@ -234,31 +226,40 @@ public class Trials {
 
 
 		//Fetching all fields data from excel
-		/*		String excel_file_path ="./TestData1.xlsx";
+		String excel_file_path_10 ="./TestData1.xlsx";
 
 
-		FileInputStream excel = new FileInputStream(excel_file_path);
-        Workbook open = WorkbookFactory.create(excel);
+		FileInputStream excel = new FileInputStream(excel_file_path_10);
+		Workbook open = WorkbookFactory.create(excel);
 		Sheet page = open.getSheet("Sheet1");
-		ArrayList<String> e= new ArrayList<String>();
-	/*	int lastRow = page.getLastRowNum();
+		ArrayList<Cell> e= new ArrayList<Cell>();
+		int lastRow = page.getLastRowNum();
 		for(int i=1;i<=lastRow; i++) 
-		{*/
-		/*		Row row_text = page.getRow(1);
-		short lastCol = row_text.getLastCellNum();
-		for(int j=1;j<lastCol;j++)
 		{
-		Cell colmn = row_text.getCell(j);
-		String col_name = colmn.toString();
-		e.add(col_name);
-		//System.out.println("COLUMN....."+j+"      "+col_name);
-
-		}
-	//	}
-		System.out.println(e);	                                                         */
+			Row row_text = page.getRow(i);
+			short lastCol = row_text.getLastCellNum();
+			for(int j=1;j<lastCol;j++)
+			{
+				  Cell colmn = row_text.getCell(j);
+				e.add(colmn);
+				//System.out.println("COLUMN....."+j+"      "+col_name);
+				
+			}
+			System.out.println("row_"+i+" "+e);
+			e.clear();
+			
+		}                                                         
 		//		Assert.assertEquals(e, l1);
+
+
+
+
+
+
+
+
 		//FETCH SERVICE
-		WebElement row_1 = forward.rowwithforwardtag.get(0);
+		/*		WebElement row_1 = forward.rowwithforwardtag.get(0);
 		row_1.click();
 		boolean fch = forward.fetchservice.isEnabled();
 		if(fch==true)
@@ -302,9 +303,9 @@ public class Trials {
 		else {
 			System.out.println("Select a service drop-down is not displayed");
 
-		}                                                           
+		}                                        */                                                   
 
 	}
-
+	
 
 }

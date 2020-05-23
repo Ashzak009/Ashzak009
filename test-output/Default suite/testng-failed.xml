@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="try1.Trials">
+      <class name="try1.ForExcelCopy">
         <methods>
-          <include name="uploadExcelAssertEachField"/>
+          <include name="writingToExcel"/>
         </methods>
-      </class> <!-- try1.Trials -->
+      </class> <!-- try1.ForExcelCopy -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -38,7 +38,8 @@ public class HomePage
 	@FindBy(xpath="//a[@title='Quick Shipment Creation - Reverse']")
 	WebElement reverseCreateShipment;
 	
-	@FindBy(xpath="//a[@title='Bulk Upload Shipments - Excel Utility']")
+//	@FindBy(xpath="//a[@title='Bulk Upload Shipments - Excel Utility']")
+	@FindBy(xpath="(//a[@href='/excel-upload'])[2]")
 	WebElement excelUploadTab;
 	
 	@FindBy(xpath="//div[@title='Account Settings']")
